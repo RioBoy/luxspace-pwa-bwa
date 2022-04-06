@@ -52,8 +52,22 @@
 @media only screen and (max-width: 768px) {
   .hero .hero-image,
   .hero .hero-caption {
+    min-height: auto;
+  }
+
+  .hero .hero-cta {
+    @apply w-12 h-12;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: 37.5%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .hero .hero-image,
+  .hero .hero-caption {
     min-height: 90vh;
   }
+
   .hero .hero-cta {
     @apply w-12 h-12;
     transform: translateX(-75px) translateY(-50%);

@@ -11,8 +11,8 @@ export default function AsideMenu() {
           />
         </div>
         <aside className="container mx-auto">
-          <div className="flex flex-wrap -mx-4 justify-center">
-            <div className="px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion">
+          <div className="flex flex-wrap md:space-x-4 justify-center">
+            <div className="w-full md:w-2/12 mb-4 md:mb-0 accordion">
               <h5 className="text-lg font-semibold mb-2 relative">Overview</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
@@ -32,7 +32,7 @@ export default function AsideMenu() {
                 </li>
               </ul>
             </div>
-            <div className="px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion">
+            <div className="w-full md:w-2/12 mb-4 md:mb-0 accordion">
               <h5 className="text-lg font-semibold mb-2 relative">Company</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
@@ -52,7 +52,7 @@ export default function AsideMenu() {
                 </li>
               </ul>
             </div>
-            <div className="px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion">
+            <div className="w-full md:w-2/12 mb-4 md:mb-0 accordion">
               <h5 className="text-lg font-semibold mb-2 relative">Explore</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
@@ -72,7 +72,7 @@ export default function AsideMenu() {
                 </li>
               </ul>
             </div>
-            <div className="px-4 w-full md:w-3/12 mb-4 md:mb-0">
+            <div className="w-full md:w-3/12 mb-4 md:mb-0">
               <h5 className="text-lg font-semibold mb-2 relative">
                 Special Letter
               </h5>
@@ -80,7 +80,7 @@ export default function AsideMenu() {
                 <label className="relative w-full">
                   <input
                     type="text"
-                    className="bg-gray-100 rounded-xl py-3 px-5 w-full focus:outline-none"
+                    className="bg-gray-100 rounded-xl py-3 px-5 md:px-2 md:text-sm lg:text-base w-full focus:outline-none"
                     placeholder="Your email adress"
                   />
                   <button className="bg-pink-400 absolute rounded-xl right-0 p-3">

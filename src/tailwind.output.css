@@ -1007,6 +1007,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media only screen and (max-width: 768px) {
   .hero .hero-image,
   .hero .hero-caption {
+    min-height: auto;
+  }
+
+  .hero .hero-cta{
+    height: 3rem;
+  }
+
+  .hero .hero-cta{
+    width: 3rem;
+  }
+
+  .hero .hero-cta {
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    background-size: 37.5%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .hero .hero-image,
+  .hero .hero-caption {
     min-height: 90vh;
   }
 
@@ -1190,6 +1211,12 @@ button[disabled]:hover{
   opacity: 1;
 }
 
+@media (max-width: 320px){
+  .\32xsm\:pl-40{
+    padding-left: 10rem;
+  }
+}
+
 @media (min-width: 768px){
   .md\:visible{
     visibility: visible;
@@ -1235,6 +1262,10 @@ button[disabled]:hover{
     margin-bottom: 0px;
   }
 
+  .md\:mt-16{
+    margin-top: 4rem;
+  }
+
   .md\:flex{
     display: flex;
   }
@@ -1275,8 +1306,18 @@ button[disabled]:hover{
     flex-direction: row;
   }
 
+  .md\:flex-nowrap{
+    flex-wrap: nowrap;
+  }
+
   .md\:items-center{
     align-items: center;
+  }
+
+  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:bg-transparent{
@@ -1285,6 +1326,11 @@ button[disabled]:hover{
 
   .md\:p-6{
     padding: 1.5rem;
+  }
+
+  .md\:px-2{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .md\:px-6{
@@ -1302,10 +1348,6 @@ button[disabled]:hover{
     padding-right: 0px;
   }
 
-  .md\:pl-72{
-    padding-left: 18rem;
-  }
-
   .md\:pl-0{
     padding-left: 0px;
   }
@@ -1318,9 +1360,14 @@ button[disabled]:hover{
     padding-bottom: 14rem;
   }
 
-  .md\:text-5xl{
-    font-size: 3rem;
-    line-height: 1;
+  .md\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-lg{
@@ -1341,5 +1388,19 @@ button[disabled]:hover{
 @media (min-width: 1024px){
   .lg\:block{
     display: block;
+  }
+
+  .lg\:pl-72{
+    padding-left: 18rem;
+  }
+
+  .lg\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .lg\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
   }
 }
