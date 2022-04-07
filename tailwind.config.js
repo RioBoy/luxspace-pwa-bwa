@@ -55,6 +55,7 @@ module.exports = {
         900: '#7b341e',
       },
       yellow: {
+        50: '#FEFCE8',
         100: '#fffff0',
         200: '#fefcbf',
         300: '#faf089',
@@ -818,6 +819,7 @@ module.exports = {
       30: '30',
       40: '40',
       50: '50',
+      60: '60',
     },
   },
   variantOrder: [
