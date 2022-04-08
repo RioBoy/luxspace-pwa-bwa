@@ -31,7 +31,6 @@ function App() {
           },
         },
       );
-      console.log(response.json());
       const { nodes } = await response.json();
       setItems(nodes);
 
