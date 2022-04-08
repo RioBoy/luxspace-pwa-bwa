@@ -626,6 +626,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
 }
 
+.mb-14{
+  margin-bottom: 3.5rem;
+}
+
 .block{
   display: block;
 }
@@ -664,6 +668,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-5{
   height: 1.25rem;
+}
+
+.h-screen{
+  height: 100vh;
 }
 
 .min-h-screen{
@@ -1350,6 +1358,10 @@ button[disabled]:hover{
 
   .md\:w-88{
     width: 22rem;
+  }
+
+  .md\:w-4\/12{
+    width: 33.333333%;
   }
 
   .md\:flex-initial{
