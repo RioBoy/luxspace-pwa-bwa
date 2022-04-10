@@ -565,6 +565,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 60;
 }
 
+.z-0{
+  z-index: 0;
+}
+
 .col-span-9{
   grid-column: span 9 / span 9;
 }
@@ -626,6 +630,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
+.mb-12{
+  margin-bottom: 3rem;
+}
+
+.mt-12{
+  margin-top: 3rem;
+}
+
 .mb-14{
   margin-bottom: 3.5rem;
 }
@@ -670,6 +690,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1.25rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
 .h-screen{
   height: 100vh;
 }
@@ -706,6 +730,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.25rem;
 }
 
+.w-24{
+  width: 6rem;
+}
+
+.max-w-full{
+  max-width: 100%;
+}
+
 .flex-auto{
   flex: 1 1 auto;
 }
@@ -716,6 +748,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-shrink-0{
   flex-shrink: 0;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.appearance-none{
+  -webkit-appearance: none;
+          appearance: none;
 }
 
 .grid-cols-9{
@@ -744,6 +785,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-center{
   justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
 }
 
 .gap-4{
@@ -788,6 +833,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(246 224 94 / var(--tw-border-opacity));
 }
 
+.border-gray-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(249 249 249 / var(--tw-border-opacity));
+}
+
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -811,6 +861,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-yellow-50{
   --tw-bg-opacity: 1;
   background-color: rgb(254 252 232 / var(--tw-bg-opacity));
+}
+
+.bg-red-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 215 215 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-35{
@@ -903,6 +958,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 14rem;
 }
 
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -930,6 +989,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-semibold{
@@ -963,6 +1027,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(183 121 31 / var(--tw-text-opacity));
 }
 
+.text-pink-400{
+  --tw-text-opacity: 1;
+  color: rgb(249 202 218 / var(--tw-text-opacity));
+}
+
+.text-gray-900{
+  --tw-text-opacity: 1;
+  color: rgb(26 32 44 / var(--tw-text-opacity));
+}
+
 .opacity-0{
   opacity: 0;
 }
@@ -981,6 +1055,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, -webkit-transform;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-all{
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1264,6 +1344,11 @@ button[disabled]:hover{
           text-decoration-line: underline;
 }
 
+.focus\:text-black:focus{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1364,6 +1449,10 @@ button[disabled]:hover{
     width: 33.333333%;
   }
 
+  .md\:max-w-lg{
+    max-width: 32rem;
+  }
+
   .md\:flex-initial{
     flex: 0 1 auto;
   }
@@ -1444,6 +1533,11 @@ button[disabled]:hover{
   .md\:text-white{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .md\:text-black{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
   }
 
   .md\:opacity-100{

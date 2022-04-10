@@ -125,4 +125,13 @@ self.addEventListener('message', (event) => {
   }
 });
 
+self.addEventListener('push', (event) => {
+  event.waitUntil(
+    self.registration.showNotification('Luxspace', {
+      icon: './icon-120.png',
+      body: event.data.text(),
+    }),
+  );
+});
+
 // Any other custom service worker logic can go here.
