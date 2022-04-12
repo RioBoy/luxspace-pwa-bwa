@@ -12,8 +12,9 @@ import Offline from './components/Offline';
 import Splash from './pages/Splash';
 import Profile from './pages/Profile';
 import Details from './pages/Details';
+import Cart from './pages/Cart';
 
-function App() {
+function App({ cart }) {
   const [items, setItems] = useState([]);
   const [offlineStatus, setOfflineStatus] = useState(!navigator.onLine);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +65,7 @@ function App() {
       ) : (
         <>
           {offlineStatus && <Offline />}
-          <Header mode="light" />
+          <Header mode="light" cart={cart} />
           <Hero />
           <Browse />
           <Arrived items={items} />
@@ -78,11 +79,43 @@ function App() {
 }
 
 export default function Routes() {
+  const cachedCart = window.localStorage.getItem('cart');
+  const [cart, setCart] = useState([]);
+
+  function handleAddToCart(item) {
+    const currentIndex = cart.length;
+    const newCart = [...cart, { id: currentIndex + 1, item }];
+    setCart(newCart);
+    window.localStorage.setItem('cart', JSON.stringify(newCart));
+  }
+
+  function handleRemoveCartItem(event, id) {
+    const revisedCart = cart.filter((item) => {
+      return item.id !== id;
+    });
+    setCart(revisedCart);
+    window.localStorage.setItem('cart', JSON.stringify(revisedCart));
+  }
+
+  useEffect(() => {
+    console.info('useEffect for localStorage');
+    if (cachedCart !== null) {
+      setCart(JSON.parse(cachedCart));
+    }
+  }, [cachedCart]);
+
   return (
     <Router>
-      <Route path="/" exact component={App} />
+      <Route path="/" exact>
+        <App cart={cart} />
+      </Route>
       <Route path="/profile" exact component={Profile} />
-      <Route path="/details/:id" component={Details} />
+      <Route path="/details/:id">
+        <Details handleAddToCart={handleAddToCart} cart={cart} />
+      </Route>
+      <Route path="/cart">
+        <Cart cart={cart} handleRemoveCartItem={handleRemoveCartItem} />
+      </Route>
     </Router>
   );
 }

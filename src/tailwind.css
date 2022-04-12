@@ -149,3 +149,20 @@ a.cart.cart-filled svg g circle.dot {
 button[disabled] {
   @apply bg-gray-300 hover:bg-gray-300 text-gray-400 hover:text-gray-400 cursor-not-allowed;
 }
+
+.cart-photo {
+  width: 90px;
+  height: 90px;
+}
+
+@screen xsm {
+  ul.breadcrumb li:not(:last-child):after {
+    content: '/';
+    @apply px-2;
+  }
+
+  .cart-photo {
+    width: 70px;
+    height: 70px;
+  }
+}
