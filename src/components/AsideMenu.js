@@ -1,12 +1,17 @@
 import React from 'react';
 
-export default function AsideMenu() {
+export default function AsideMenu({ currentPage }) {
   return (
     <section className="">
-      <div className="border-t border-b border-gray-200 py-12 mt-16 px-4">
+      <div
+        className={[
+          'py-12 mt-16 px-4',
+          currentPage === 'home' ? 'border-t border-b border-gray-200' : '',
+        ].join(' ')}
+      >
         <div className="flex justify-center mb-8">
           <img
-            src="images/content/logo.png"
+            src="/images/content/logo.png"
             alt="Luxspace | Fulfill your house with beautiful furniture"
           />
         </div>

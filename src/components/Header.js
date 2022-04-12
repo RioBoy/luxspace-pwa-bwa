@@ -2,16 +2,22 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ mode }) {
   return (
-    <header className="absolute w-full z-40 px-4">
+    <header
+      className={['w-full z-40 px-4', mode === 'light' ? 'absolute' : ''].join(
+        ' ',
+      )}
+    >
       <div className="container mx-auto py-5">
         <div className="flex flex-stretch items-center">
           <div className="w-56 items-center flex">
-            <img
-              src="images/content/logo.png"
-              alt="Luxspace | Fulfill your house with beautiful furniture"
-            />
+            <Link to="/">
+              <img
+                src="../images/content/logo.png"
+                alt="Luxspace | Fulfill your house with beautiful furniture"
+              />
+            </Link>
           </div>
           <div className="w-full"></div>
           <div className="w-auto">
@@ -22,7 +28,10 @@ export default function Header() {
               <li className="mx-3 py-6 md:py-0">
                 <a
                   href="/"
-                  className="text-black md:text-white hover:underline"
+                  className={[
+                    'text-black hover:underline',
+                    mode === 'light' ? 'md:text-white' : 'md:text-black',
+                  ].join(' ')}
                 >
                   Showcase
                 </a>
@@ -30,7 +39,10 @@ export default function Header() {
               <li className="mx-3 py-6 md:py-0">
                 <a
                   href="/"
-                  className="text-black md:text-white hover:underline"
+                  className={[
+                    'text-black hover:underline',
+                    mode === 'light' ? 'md:text-white' : 'md:text-black',
+                  ].join(' ')}
                 >
                   Catalog
                 </a>
@@ -38,7 +50,10 @@ export default function Header() {
               <li className="mx-3 py-6 md:py-0">
                 <a
                   href="/"
-                  className="text-black md:text-white hover:underline"
+                  className={[
+                    'text-black hover:underline',
+                    mode === 'light' ? 'md:text-white' : 'md:text-black',
+                  ].join(' ')}
                 >
                   Delivery
                 </a>
@@ -46,7 +61,10 @@ export default function Header() {
               <li className="mx-3 py-6 md:py-0">
                 <Link
                   to="/profile"
-                  className="text-black md:text-white hover:underline"
+                  className={[
+                    'text-black hover:underline',
+                    mode === 'light' ? 'md:text-white' : 'md:text-black',
+                  ].join(' ')}
                 >
                   Profile
                 </Link>
