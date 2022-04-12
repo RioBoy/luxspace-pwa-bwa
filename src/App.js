@@ -109,7 +109,9 @@ export default function Routes() {
       <Route path="/" exact>
         <App cart={cart} />
       </Route>
-      <Route path="/profile" exact component={Profile} />
+      <Route path="/profile" exact>
+        <Profile cart={cart} />
+      </Route>
       <Route path="/details/:id">
         <Details handleAddToCart={handleAddToCart} cart={cart} />
       </Route>

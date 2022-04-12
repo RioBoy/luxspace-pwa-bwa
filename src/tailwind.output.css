@@ -565,10 +565,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 60;
 }
 
-.z-0{
-  z-index: 0;
-}
-
 .col-span-9{
   grid-column: span 9 / span 9;
 }
