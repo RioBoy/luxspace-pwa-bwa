@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import AsideMenu from '../components/AsideMenu';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Offline from '../components/Offline';
+
+import useOfflineStatus from '../helpers/hooks/useOfflineStatus';
 
 function urlB64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
@@ -39,8 +42,11 @@ async function subscribe() {
 }
 
 export default function Profile({ cart }) {
+  const [offlineStatus] = useOfflineStatus();
+
   return (
     <>
+      {offlineStatus && <Offline />}
       <Header mode="dark" cart={cart} />
       <section className="bg-gray-100 py-8 px-4">
         <div className="container mx-auto">

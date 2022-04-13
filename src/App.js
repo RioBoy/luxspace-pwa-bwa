@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Browse from './components/Browse';
-import Arrived from './components/Arrived';
-import Clients from './components/Clients';
-import AsideMenu from './components/AsideMenu';
-import Footer from './components/Footer';
-import Offline from './components/Offline';
 import Splash from './pages/Splash';
-import Profile from './pages/Profile';
+import HomePage from './pages/HomePage';
 import Details from './pages/Details';
 import Cart from './pages/Cart';
+import Profile from './pages/Profile';
+import Offline from './components/Offline';
+
+import useOfflineStatus from './helpers/hooks/useOfflineStatus';
 
 function App({ cart }) {
   const [items, setItems] = useState([]);
-  const [offlineStatus, setOfflineStatus] = useState(!navigator.onLine);
+  const [offlineStatus] = useOfflineStatus();
   const [isLoading, setIsLoading] = useState(true);
-
-  function handleOfflineStatus() {
-    setOfflineStatus(!navigator.onLine);
-  }
 
   useEffect(() => {
     (async () => {
@@ -44,19 +36,10 @@ function App({ cart }) {
       document.body.appendChild(script);
     })();
 
-    handleOfflineStatus();
-    window.addEventListener('online', handleOfflineStatus);
-    window.addEventListener('offline', handleOfflineStatus);
-
     setTimeout(() => {
       setIsLoading(false);
     }, 1500);
-
-    return () => {
-      window.removeEventListener('online', handleOfflineStatus);
-      window.removeEventListener('offline', handleOfflineStatus);
-    };
-  }, [offlineStatus]);
+  }, []);
 
   return (
     <>
@@ -65,13 +48,7 @@ function App({ cart }) {
       ) : (
         <>
           {offlineStatus && <Offline />}
-          <Header mode="light" cart={cart} />
-          <Hero />
-          <Browse />
-          <Arrived items={items} />
-          <Clients />
-          <AsideMenu currentPage="home" />
-          <Footer />
+          <HomePage cart={cart} items={items} />
         </>
       )}
     </>

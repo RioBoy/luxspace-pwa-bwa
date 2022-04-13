@@ -8,7 +8,9 @@ import Header from '../components/Header';
 import Breadcrumb from '../components/Breadcrumb';
 import AsideMenu from '../components/AsideMenu';
 import Footer from '../components/Footer';
+import Offline from '../components/Offline';
 
+import useOfflineStatus from '../helpers/hooks/useOfflineStatus';
 import numberFormat from '../utils/numberFormat';
 
 export default function Details({ cart, handleAddToCart }) {
@@ -16,6 +18,7 @@ export default function Details({ cart, handleAddToCart }) {
   const { name, price, description, image1, image2, image3, image4, image5 } =
     location.state;
 
+  const [offlineStatus] = useOfflineStatus();
   const [currentImage, setCurrentImage] = useState(image1);
 
   const history = useHistory();
@@ -29,6 +32,7 @@ export default function Details({ cart, handleAddToCart }) {
 
   return (
     <>
+      {offlineStatus && <Offline />}
       <Header mode="dark" cart={cart} />
       <Breadcrumb />
       <section className="container mx-auto md:px-4 xl:px-0">

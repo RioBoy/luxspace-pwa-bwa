@@ -6,12 +6,17 @@ import Header from '../components/Header';
 import Breadcrumb from '../components/Breadcrumb';
 import AsideMenu from '../components/AsideMenu';
 import Footer from '../components/Footer';
+import Offline from '../components/Offline';
 
+import useOfflineStatus from '../helpers/hooks/useOfflineStatus';
 import numberFormat from '../utils/numberFormat';
 
 export default function Cart({ cart, handleRemoveCartItem }) {
+  const [offlineStatus] = useOfflineStatus();
+
   return (
     <>
+      {offlineStatus && <Offline />}
       <Header mode="dark" cart={cart} />
       <Breadcrumb />
       <section className="md:py-16">

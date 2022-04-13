@@ -1273,7 +1273,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 50%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero .hero-image,
   .hero .hero-caption {
     min-height: auto;
@@ -1294,7 +1294,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .hero .hero-image,
   .hero .hero-caption {
     min-height: 90vh;
